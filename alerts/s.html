@@ -1,0 +1,36 @@
+<html>
+<head>
+	<title>Demo</title>
+</head>
+<body>
+Se
+<script type="text/javascript">
+	var ctrl = false;
+	var value = 0;
+	function called(data) {
+		window.postMessage({info: data}, "*");
+	}
+	function is() {
+		value++;
+		if (ctrl) return false;
+		if (value > 30) window.location.reload();
+		called('{"response": "4"}');
+		setTimeout(function function_name(argument) {		
+			is();
+		},1000);
+		console.log("DEBUG");
+	}
+	setTimeout(function function_name(argument) {		
+		is();
+	},1000);
+	window.onhashchange = function() { 
+		ctrl = true;
+		try {
+			parent.myMain();
+		} catch (err) {
+			top.myMain();
+		}
+	};
+</script>
+</body>
+</html>
